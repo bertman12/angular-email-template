@@ -1,0 +1,51 @@
+/*right column items*/
+.mail-display {
+    background-color:white;
+    padding: 10px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#reply-field {
+    position: relative;
+    border: 1px solid gray;
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: space-between;
+}
+
+#reply-input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#reply-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: 15%;
+}
+
+.phase-text {
+    color: rgb(161, 161, 161);
+}
+
+.phase-text p{
+    outline: 1px solid #e7e7e7;
+    background: #ffffff;
+}
+
+.message-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}

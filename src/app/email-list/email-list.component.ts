@@ -15,6 +15,9 @@ export class EmailListComponent implements OnInit {
 
   
   ngOnInit(): void {
+    this.emailService.emailListModified.subscribe(
+      ()=>{this.localEmailData = this.emailService.getEmails()}
+    )
   }
 
 }

@@ -13,13 +13,32 @@ export class EmailService {
     {user: "Neanderthal Times", date: "Pre-History", userEmail: "oogabooga@oog.com", recieverEmail: "you@you.com", content: "OoogOoogOoogOoogOoogOoogOoogOoog" }
 ];
 
-  selectedEmail: email = {user: "Billy Bob", date: "Tuesday", userEmail: "billybob@bob.com", recieverEmail: "you@you.com", content: "Hey! I got your email, sounds good." };
-  @Output() clickedemail = new EventEmitter<email>()
+  selectedEmail: email = 
+  {user: "Billy Bob", 
+  date: "Tuesday", 
+  userEmail: "billybob@bob.com", 
+  recieverEmail: "you@you.com", 
+  content: "Hey! I got your email, sounds good." };
+  @Output() clickedemail = new EventEmitter<email>();
+  @Output() emailListModified = new EventEmitter<null>();
 
   constructor() { }
 
   emailIsClicked(email: email){
     this.clickedemail.emit(email);
+  }
+
+  getEmails(){
+    return this.emails.slice();
+  }
+  deleteEmail(email: email){
+    this.emails.forEach(
+      (obj, index) =>{
+        if(obj.content === email.content){
+          this.emails.splice(index, 1);
+        }
+    })
+    this.emailListModified.emit();
   }
 
 

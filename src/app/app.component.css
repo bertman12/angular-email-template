@@ -1,0 +1,59 @@
+.my-container {
+
+    height: 100vh;
+}
+
+.main-row {
+    display: flex;
+    border: 1px solid black;
+    font-family: helvetica, sans-serif;
+    height: 100vh;
+}
+
+/*general text modifications*/
+
+
+/*left column items*/
+.mail-options {
+    background-color: rgb(65, 65, 65);
+    
+    padding: 10px;
+    color: white;
+    word-wrap: break-word;
+ 
+    display: flex;  
+    flex-flow:nowrap column; 
+    justify-content: flex-start;
+    
+}
+
+@media only screen and (max-width: 575px){
+    .mail-options{ 
+        display: flex;
+        align-items: center;
+    }
+}
+
+.icon-buttons {
+    padding: 5px;
+}
+
+.mail-types:hover {
+    text-decoration: underline;
+}
+
+.image-greet {
+    display: flex;
+    margin-bottom: 15px;
+
+}
+
+#compose-button {
+    margin-bottom: 15px;
+    
+}
+
+#dota-logo {
+    height: 40px;
+    
+}

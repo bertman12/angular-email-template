@@ -1,0 +1,21 @@
+/*middle column items*/
+.email-list-container{
+    background-color: rgb(236, 236, 236);
+    height: 100%;
+}
+.mail-list {
+    background-color: rgb(236, 236, 236);
+    padding: 10px;
+    font: rgb(161, 161, 161);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+#search-bar {
+    height: 30px;
+    width: 100%;
+
+}

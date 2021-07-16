@@ -15,5 +15,10 @@ export class EmailDisplayComponent implements OnInit {
       (email) => {this.selectedEmail = email}
     )
   }
+  onDeleteEmail(){
+    this.emailService.deleteEmail(this.selectedEmail);
+    this.selectedEmail = this.emailService.emails[0];
+  }
+
 
 }

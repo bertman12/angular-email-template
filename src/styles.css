@@ -1,139 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-body {
+You can add global styles to this file, and also import other style files
+
+html,body {
     margin: 0px;
-}
-
-.my-container {
     height: 100vh;
 }
 
-.main-row {
-    border: 1px solid black;
-    height: 100vh;
-    font-family: helvetica, sans-serif;
-
-}
-
-/*general text modifications*/
-.phase-text {
-    color: rgb(161, 161, 161);
-    
-}
-
-/*left column items*/
-.mail-options {
-    background-color: rgb(65, 65, 65);
-    
-    padding: 10px;
-    color: white;
-    word-wrap: break-word;
- 
-    display: flex;  
-    flex-flow:nowrap column; 
-    justify-content: flex-start;
-    
-}
-
-@media only screen and (max-width: 575px){
-    .mail-options{ 
-        display: flex;
-        align-items: center;
-    }
-}
-
-.icon-buttons {
-    padding: 5px;
-    
-}
-
-.mail-types:hover {
-    text-decoration: underline;
-}
-
-.image-greet {
-    display: flex;
-    margin-bottom: 15px;
-
-}
-
-#compose-button {
-    margin-bottom: 15px;
-    
-}
-
-#dota-logo {
-    height: 40px;
-    
-}
-
-/*middle column items*/
-.mail-list {
-    background-color: rgb(236, 236, 236);
-    padding: 10px;
-    font: rgb(161, 161, 161);
-    
-
-    display: flex;
-    flex-direction: column;
-
-}
-
-.message-card {
-    margin-top: 30px;
-    padding: 5px;
-}
-
-.message-card:hover {
-    background-color: white;
-    border-radius: 10px;
-}
-
-.message-header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
 
 
 
-#search-bar {
-    height: 30px;
-    width: 100%;
 
-}
 
-/*right column items*/
-.mail-display {
-    background-color:white;
-    padding: 10px;
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-}
 
-#reply-field {
-    border: 1px solid gray;
-    height: 250px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: space-between;
-}
 
-#reply-input {
-    border: none;
-    width: 100%;
-    height: 100%;
-    
-}
-
-#reply-options {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    height: 15%;
-}
