@@ -40,8 +40,10 @@
 }
 
 .phase-text p{
-    outline: 1px solid #e7e7e7;
-    background: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 3px;
+    padding-left: 3px;
 }
 
 .message-header {

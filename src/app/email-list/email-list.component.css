@@ -17,5 +17,9 @@
 #search-bar {
     height: 30px;
     width: 100%;
+}
 
+#list-item-seperator{
+    margin: 0px;
+    margin-top: 15px;
 }

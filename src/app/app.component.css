@@ -38,8 +38,12 @@
     padding: 5px;
 }
 
-.mail-types:hover {
+.mail-categories{
+    margin-bottom: 5px;
+}
+.mail-categories:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .image-greet {
@@ -51,6 +55,16 @@
 #compose-button {
     margin-bottom: 15px;
     
+}
+
+.category-container{
+    display: flex;
+    justify-content: center;
+}
+
+.category-buttons{
+    display: flex;
+    justify-content: center;
 }
 
 #dota-logo {

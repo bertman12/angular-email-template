@@ -4,6 +4,7 @@
         <input id = "search-bar" type="text" placeholder="Search..">
         <div *ngFor = "let email of localEmailData">
             <app-email-item [email] = "email"></app-email-item>
+            <hr id="list-item-seperator">
         </div>
     </div>
 </div>
