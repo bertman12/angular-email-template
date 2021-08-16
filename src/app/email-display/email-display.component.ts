@@ -10,6 +10,7 @@ export class EmailDisplayComponent implements OnInit {
 
   constructor(private emailService: EmailService) { }
   selectedEmail = this.emailService.selectedEmail;
+  uploadedFileName:string = '';
 
   ngOnInit(): void {
     this.emailService.clickedemail.subscribe(
@@ -17,9 +18,14 @@ export class EmailDisplayComponent implements OnInit {
     )
   }
 
+  onFileUpload(event:any){
+    console.log(event.target.files[0]);
+    this.uploadedFileName = event.target.files[0].name;
+  }
+
   //it skips never fulfills the first if condition, console.log() to figure out tomorrow
   onMoveToTrash(){
-    if(this.selectedEmail.categories === ['Trash']){
+    if(this.selectedEmail.categories.includes('Trash')){
       const response = confirm('This will permanently delete the selected email.');
       if(response){
       this.emailService.deleteEmail(this.selectedEmail);

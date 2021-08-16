@@ -7,7 +7,6 @@ import { email } from './email.model';
 })
 export class EmailService {
 
-
   emailsByCategory: email[] = [
     {user: "Billy Bob", date: "Tuesday", userEmail: "billybob@gmail.com", recieverEmail: "you@gmail.com", content: "Hey! I got your email, sounds good.", categories: ['Inbox', 'Tagged'] },
     {user: "George Washington", date: "Friday", userEmail: "georgewashington@gmail.com", recieverEmail: "you@gmail.com", content: "The revolution is going well!", categories: ['Inbox'] },
@@ -16,14 +15,13 @@ export class EmailService {
     {user: "Jack Nicholson", date: "Wednesday", userEmail: "mrJack@gmail.com", recieverEmail: "you@gmail.com", content: "Nice to meet you! My name is eric!", categories: ['Inbox','Tagged','Important'] },
     {user: "Eddy", date: "Today", userEmail: "you@gmail.com", recieverEmail: "frank@gmail.com", content: "Nice to meet you! My name is Eddy!", categories: ['Sent'] },
   ];
-
-  selectedEmail: email = this.emailsByCategory[0];
-
-  @Output() clickedemail = new Subject<email>();
-  @Output() emailListModified = new Subject<email[]>();
-
-  mailOptions: string[] = ['Compose', 'Inbox', 'Tagged', 'Important', 'Sent', 'Drafts', 'Trash']
-  currentCategory:string = 'Inbox';
+  
+  clickedemail = new Subject<email>();
+  emailListModified = new Subject<email[]>();
+  
+  mailCategories: string[] = ['Inbox', 'Tagged', 'Important', 'Sent', 'Drafts', 'Trash']
+  selectedEmail: email = this.emailsByCategory[0]; //default
+  currentCategory:string = 'Inbox'; //default
   
   constructor() { }
 
@@ -70,7 +68,7 @@ export class EmailService {
         }
     });
 
-    this.clickedemail.next(this.getMailByCategory(this.currentCategory)[0] || {}); //grab the first email in the currently chosen category or if empty, return an empty object
+    this.clickedemail.next(this.getMailByCategory(this.currentCategory)[0] || {user: "", date: "", userEmail: "", recieverEmail: "", content: "", categories: ['']}); //grab the first email in the currently chosen category or if empty, return an empty email object
     this.emailListModified.next(this.getMailByCategory(this.currentCategory) || {}); //inform subscribers of new list
   }
 

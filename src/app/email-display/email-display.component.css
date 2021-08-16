@@ -3,12 +3,20 @@
     outline: none;
     box-shadow: none;
   }
-
+.dropdown-toggle::after{
+    display: none;
+}
 .mail-display {
     background-color:white;
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding:5px;
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(65, 65, 65); */
 }
 
 .recieved-content{

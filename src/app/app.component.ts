@@ -10,15 +10,16 @@ export class AppComponent {
   
   constructor(private emailService: EmailService){}
   
-  mailOptions:string[] = this.emailService.mailOptions;
-
+  mailOptions:string[] = this.emailService.mailCategories;
+  localOptionselected: string = 'Inbox'; //used for changing text of the dropdown menu button
+  
+  onComposeEmail(){
+    this.emailService.composeEmail();
+  }
+  
   onOptionSelected(option: string){
-    if(option == 'Compose'){
-      this.emailService.composeEmail();
-    }
-    else{
-      this.emailService.getMailByCategory(option);
-    }
+    this.localOptionselected = option;
+    this.emailService.getMailByCategory(option);
   }
 
 
