@@ -2,6 +2,9 @@
 <div class="email-list-container">
     <div class = "col-12 col-md-12 col-sm-9 mail-list">
         <input id = "search-bar" type="text" placeholder="Search..">
+        <div style=margin-top:15px;>
+            <strong class="currentCategory">{{ currentCategory !== 'Compose' ? currentCategory : 'No Category Chose!' }}</strong>
+        </div>
         <div *ngFor = "let email of localEmailData">
             <app-email-item [email] = "email"></app-email-item>
             <hr id="list-item-seperator">

@@ -1,12 +1,13 @@
 <div class="mail-list-item">
     <a (click) = "onClickedEmail()" href = "#">
-    <div class="message-card">
-        <div class="message-header">
-            <p><strong>{{ email.user }}</strong></p>
-                <p class ="phase-text">{{ email.date }}</p>
+        <div class="message-card">
+            <div class="message-header">
+                <p><strong>{{ email.user }}</strong></p>
+                    <p class ="phase-text">{{ email.date }}</p>
+            </div>
+                <br>
+                <p><span class = "phase-text d-none d-sm-block">{{ email.content }}</span>
+            </p>
         </div>
-            <br>
-            <p><span class = "phase-text d-none d-sm-block">{{ email.content }}</span>
-        </p>
-    </div></a>
+    </a>
 </div>

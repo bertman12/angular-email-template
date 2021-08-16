@@ -1,4 +1,9 @@
 /*right column items*/
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
 .mail-display {
     background-color:white;
     padding: 10px;
@@ -6,10 +11,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 
 }
 
-#reply-field {
+#reply-field-wrapper {
     position: relative;
     border: 1px solid gray;
     height: 250px;
@@ -20,13 +26,6 @@
     align-items: space-between;
 }
 
-#reply-input {
-    border: none;
-    width: 100%;
-    height: 100%;
-    
-}
-
 #reply-options {
     display: flex;
     flex-direction: row;
@@ -34,18 +33,28 @@
 
     height: 15%;
 }
-
-.phase-text {
-    color: rgb(161, 161, 161);
+.recipient-wrapper{
+    border: 2px white solid;
+    border-radius: 7px;
+    transition: border ease-in-out 0.25s;
+    margin:5px;
 }
 
-.phase-text p{
-    border: 1px solid black;
+.recipient-wrapper:hover{
+    border: 2px rgb(0, 0, 0) solid;
+}
+
+.recipient{
+    border: 3px solid black;
     border-radius: 5px;
-    margin-left: 3px;
     padding-left: 3px;
+    margin:0px;
+    transition: border ease-in-out 0.25s;
 }
 
+.recipient-wrapper:hover .recipient{
+    border: 3px rgb(0, 174, 255) ridge;
+}
 .message-header {
     display: flex;
     flex-flow: row wrap;

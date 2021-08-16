@@ -3,5 +3,6 @@ export interface email{
     date: string,
     userEmail: string,
     recieverEmail: string,
-    content: string
+    content: string,
+    categories: string[] // [inbox, all, important....etc]
 }

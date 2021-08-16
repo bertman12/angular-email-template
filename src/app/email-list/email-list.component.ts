@@ -8,16 +8,20 @@ import { email } from '../email.model';
   styleUrls: ['./email-list.component.css']
 })
 export class EmailListComponent implements OnInit {
+  
   localEmailData: email[] =[];
+  currentCategory:string = 'Inbox'
   constructor(private emailService: EmailService) {
-    this.localEmailData = this.emailService.emails;
    }
 
-  
   ngOnInit(): void {
+    this.localEmailData = this.emailService.getMailByCategory('Inbox');
     this.emailService.emailListModified.subscribe(
-      ()=>{this.localEmailData = this.emailService.getEmails()}
-    )
-  }
+      (newEmailsList)=>{
+        this.localEmailData = newEmailsList
+        this.currentCategory = this.emailService.currentCategory;
+      }
+      )
+    }
 
 }

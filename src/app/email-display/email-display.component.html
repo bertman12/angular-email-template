@@ -2,26 +2,38 @@
 
     <!--grouping div for spacing-->
     <div>
-        <div class = "phase-text">
-            <p>To: {{ selectedEmail.recieverEmail }}</p>
-            <p>From: {{ selectedEmail.userEmail }}</p>
+        <div class="recipient-wrapper">
+            <p class="recipient">To: {{ selectedEmail.recieverEmail }}</p>
         </div>
+        <div class="recipient-wrapper">
+            <p class="recipient">From: {{ selectedEmail.userEmail }}</p>
+        </div>
+        <hr>
         <div class="message-header">
             <p><strong>{{ selectedEmail.user }}</strong></p>
 
             <!--grouping div for icons-->
             <div class="btn-group">
-                <button (click)="onDeleteEmail()" class="btn btn-danger">
+                <!-- DELETE -->
+                <button (click)="onMoveToTrash()" class="btn btn-danger">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                         <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
                     </svg>
                 </button>
+                <!-- ATTACH -->
+                <button class="btn btn-warning">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+                        <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+                    </svg>
+                </button>
+                <!-- REPLY -->
                 <button class="btn btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
                         <path d="M5.921 11.9L1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
                     </svg>
                 </button>
-                <button class="btn btn-info">
+                <!-- OPTIONS -->
+                <button class="btn btn-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                         <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
                     </svg>
@@ -33,16 +45,8 @@
     </div>
     
     <!--reply field-->
-    <div id = "reply-field">
+    <div id = "reply-field-wrapper">
         <textarea name="reply" id="" cols="100%" rows="100%" style="resize: none;"></textarea>
-    </div>
-    <div id = "reply-options">
-        <button class="btn btn-warning">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
-                <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
-            </svg>
-        </button>
-        <button class="btn btn-primary">Reply</button>
     </div>
 </div>
 <!--end mail-display-->

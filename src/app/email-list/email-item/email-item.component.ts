@@ -8,7 +8,7 @@ import { EmailService } from 'src/app/email.service';
   styleUrls: ['./email-item.component.css']
 })
 export class EmailItemComponent implements OnInit {
-  @Input() email: email = {user: "Billy Bob", date: "Tuesday", userEmail: "billybob@bob.com", recieverEmail: "you@you.com", content: "Hey! I got your email, sounds good." };
+  @Input() email: email = {user: "Billy Bob", date: "Tuesday", userEmail: "billybob@bob.com", recieverEmail: "you@you.com", content: "Hey! I got your email, sounds good.", categories:['Inbox'] };
 
   constructor(private emailService: EmailService) { }
 

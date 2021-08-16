@@ -1,4 +1,4 @@
-<div class = "container-fluid my-container">
+<div class = "container-fluid">
 
   <div class = "row main-row">
 
@@ -6,9 +6,10 @@
       <div class = "col-lg-2 col-md-3 col-sm-3 mail-options">
           
           <div class="image-greet">
-              <img id = "dota-logo" src="https://1000logos.net/wp-content/uploads/2019/03/Dota-2-Logo.png" alt="some picture">
-              <p>Welcome back Eddy!</p>
+              <img id = "dota-logo" src="https://1000logos.net/wp-content/uploads/2019/03/Dota-2-Logo.png" alt="some picture" width="50px">
+              <p style="margin:0px;">Welcome back Eddy!</p>
           </div>
+          <hr>
           
           
           <!--mail options on smaller screens-->
@@ -62,27 +63,12 @@
               </button>
 
           </div>
-          <!--end mail options on smaller screens-->
+          <!--END mail options on smaller screens-->
 
+          <!-- Normal screen size mail options -->
           <div class="category-buttons d-none d-sm-block d-md-block">
-              <!-- <button id = "compose-button" class="btn btn-primary">COMPOSE</button> -->
-            <div class="col-12 category-container">
-                <p class="col-8 btn btn-primary mail-categories">Inbox</p>
-            </div>
-            <div class="col-12 category-container">
-                <p class="col-8 btn btn-primary mail-categories">Tagged</p>
-            </div>
-            <div class="col-12 category-container">
-                <p class="col-8 btn btn-primary mail-categories">Important</p>
-            </div>
-            <div class="col-12 category-container">
-                <p class="col-8 btn btn-primary mail-categories">Sent Mail</p>
-            </div>
-            <div class="col-12 category-container">
-                <p class="col-8 btn btn-primary mail-categories">Drafts</p>
-            </div>
-            <div class="col-12 category-container">
-                <p class="col-8 btn btn-primary mail-categories">Trash</p>
+            <div *ngFor="let option of mailOptions" class="col-12 category-container">
+                <button class="col-8 btn btn-primary mail-categories" (click)="onOptionSelected(option)">{{ option }}</button>
             </div>
           </div>
 

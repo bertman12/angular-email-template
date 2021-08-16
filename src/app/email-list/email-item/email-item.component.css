@@ -1,4 +1,13 @@
 
+a{
+    text-decoration: none;
+    color:rgb(70, 70, 70)
+}
+
+a:focus {
+    color:rgb(0, 102, 255);
+}
+
 .phase-text {
     color: rgb(161, 161, 161);
 }

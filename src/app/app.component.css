@@ -1,7 +1,7 @@
-.my-container {
-
-    height: 100vh;
-}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
 
 .main-row {
     display: flex;
@@ -42,13 +42,16 @@
     margin-bottom: 5px;
 }
 .mail-categories:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
     cursor: pointer;
 }
 
 .image-greet {
     display: flex;
-    margin-bottom: 15px;
+    flex-direction: column;
+    align-items: center;
+
+    /* padding: 5px; */
 
 }
 
@@ -65,9 +68,4 @@
 .category-buttons{
     display: flex;
     justify-content: center;
-}
-
-#dota-logo {
-    height: 40px;
-    
 }
