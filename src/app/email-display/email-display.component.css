@@ -6,12 +6,16 @@
 
 .mail-display {
     background-color:white;
-    padding: 10px;
-   
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100%;
+}
+
+.recieved-content{
+    border: 2px black ridge;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    padding:5px;
 
 }
 
@@ -19,6 +23,7 @@
     position: relative;
     border: 1px solid gray;
     height: 250px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 
     display: flex;
     flex-direction: column;
@@ -26,18 +31,11 @@
     align-items: space-between;
 }
 
-#reply-options {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    height: 15%;
-}
 .recipient-wrapper{
     border: 2px white solid;
     border-radius: 7px;
     transition: border ease-in-out 0.25s;
-    margin:5px;
+    margin:5px 0px;
 }
 
 .recipient-wrapper:hover{

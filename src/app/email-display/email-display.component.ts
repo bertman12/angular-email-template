@@ -17,16 +17,20 @@ export class EmailDisplayComponent implements OnInit {
     )
   }
 
+  //it skips never fulfills the first if condition, console.log() to figure out tomorrow
   onMoveToTrash(){
-    const response = confirm('Are you sure you want to move to trash?');
-    if(response){
-      this.emailService.moveToTrash(this.selectedEmail);
+    if(this.selectedEmail.categories === ['Trash']){
+      const response = confirm('This will permanently delete the selected email.');
+      if(response){
+      this.emailService.deleteEmail(this.selectedEmail);
+      }
+    }
+    else{
+      const response = confirm('Are you sure you want to move to trash?');
+      if(response){
+        this.emailService.moveToTrash(this.selectedEmail);
+      }
     }
   }
-
-  onDeleteEmail(){
-    this.emailService.deleteEmail(this.selectedEmail);
-  }
-
 
 }
